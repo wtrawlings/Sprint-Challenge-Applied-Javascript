@@ -28,22 +28,22 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
-1. What is the DOM?
+1. What is the DOM? An expression between the code and rendered ideas in an object form. 
 
-2. What is an event?
+2. What is an event? An interaction from the user where they are doing something to the presented interface- or any other items that are effecting the interface.
 
-3. What is an event listener?
+3. What is an event listener? A code placed on an element that is set to wait for user interaction/input.
 
-4. Why would we convert a NodeList into an Array?
+4. Why would we convert a NodeList into an Array? I can't use map on a NodeList.
 
-5. What is a component?
+5. What is a component? A function that returns an element in the interface
 
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-* [ ] You are now ready to build this project with your preferred IDE
+* [x] Fork the project into your GitHub user account
+* [x] Clone the forked project into a directory on your machine
+* [x] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+* [x] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
