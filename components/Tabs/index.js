@@ -11,24 +11,27 @@ let topicsHold = [];
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
         topicsHold = response.data;
-        console.log(response.data);
-        //return topicsHold;
+        console.log(topicsHold);
+        return topicsHold;
     })
     .catch(error => {
         console.error(error)
     })
 
-function topicList(topicsHold) {
+function topicList() {
     const topicTab = document.querySelector('.topics');
-    for (let i = 0; i < topicsHold.length; i++) {
-        document.createElement('div');
+    console.log(topicTab);
+    topicsHold.forEach(topicBunch);
+
+    function topicBunch() {
+        //document.createElement('div');
         topicTab.appendChild('div');
         topicTab.classList.add('tab');
         topicTab.textContent = topics[i];
 
-        return topicTab;
+        console.log(topicTab);
+
     }
 }
 //console.log(topicTab)
-topicList(topicsHold);
-console.log(topicsHold);
+topicList();
