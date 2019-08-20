@@ -7,31 +7,43 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+const topicTab = document.querySelector('.topics');
+
 let topicsHold = [];
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
-        topicsHold = response.data;
-        console.log(topicsHold);
-        return topicsHold;
+        const topicsHold = response.data;
+        //console.log(topicsHold); //this is showing the data
+        console.log(topicList(response.data))
+            //return topicsHold;
     })
     .catch(error => {
         console.error(error)
     })
 
 function topicList() {
-    const topicTab = document.querySelector('.topics');
+    //const topicTab = document.querySelector('.topics');
     console.log(topicTab);
-    topicsHold.forEach(topicBunch);
+    //console.log(topicsHold); //this is still blank for some reason
+    topicsHold.forEach(topicBunch());
 
     function topicBunch() {
-        //document.createElement('div');
-        topicTab.appendChild('div');
-        topicTab.classList.add('tab');
-        topicTab.textContent = topics[i];
+        var topicDiv = document.createElement('div');
+        topicTab.appendChild(topicDiv);
+        topicDiv.classList.add('tab');
+        topicDiv.textContent = topics[i];
 
         console.log(topicTab);
 
     }
+
 }
-//console.log(topicTab)
+
+
+//console.log(topicsHold); //this shows as undefined
+
+//return topicList;//I need to return something!
+
+//console.log(topicTab)//no data in topicTab
 topicList();
