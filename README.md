@@ -36,7 +36,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 4. Why would we convert a NodeList into an Array? I can't use map on a NodeList.
 
-5. What is a component? A function that returns an element in the interface
+5. What is a component? A function that returns an element in the interface.
 
 ### Git Set up
 
