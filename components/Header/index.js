@@ -25,7 +25,7 @@ function Header() {
     span2.textContent = '98°';
 
     const headControl = document.querySelector('.header-container');
-    console.log(headControl);
+    //console.log(headControl);
     headControl.appendChild(head);
     head.appendChild(span);
     head.appendChild(h1);
