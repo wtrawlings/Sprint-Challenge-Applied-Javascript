@@ -13,25 +13,33 @@ console.log(topicTab);
 
 function topicList(data) {
     //const topicTab = document.querySelector('.topics');
-    data.forEach(function(_data) {
-            console.log(_data);
-        }
-        // var topicDiv = document.createElement('div');
-        // topicTab.appendChild(topicDiv);
-        // topicDiv.classList.add('tab');
-        // topicDiv.textContent = _data[i];
-
-        // console.log(topicTab);
-        //    <div class="tab">topic here</div>
+    data.forEach(function(data) {
+        console.log(data);
     });
+    // var topicDiv = document.createElement('div');
+    // topicTab.appendChild(topicDiv);
+    // topicDiv.classList.add('tab');
+    // topicDiv.textContent = _data[i];
+
+    // console.log(topicTab);
+    //    <div class="tab">topic here</div>
+    //});
 
 };
 
-
+var topicsHold = [];
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
         console.log(response.data); //this is showing an ARRAY of topics
-        topicList(response.data);
+        topicsHold = response.data;
+        //topicList(response.data); // ok don't call out just do it in here
+        topicsHold.forEach(function() {
+            var topicDiv = document.createElement('div');
+            topicTab.appendChild(topicDiv);
+            topicDiv.classList.add('tab');
+            topicDiv.textContent = _data[i];
+
+        });
 
     })
     .catch(error => {
