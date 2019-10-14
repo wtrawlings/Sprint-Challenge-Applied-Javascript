@@ -11,40 +11,30 @@
 const topicTab = document.querySelector('.topics');
 console.log(topicTab);
 
-function topicList(data) {
+function topicsList(topics) {
     //const topicTab = document.querySelector('.topics');
-    data.forEach(function(data) {
-        console.log(data);
-    });
-    // var topicDiv = document.createElement('div');
-    // topicTab.appendChild(topicDiv);
-    // topicDiv.classList.add('tab');
-    // topicDiv.textContent = _data[i];
+    var topicDiv = document.createElement('div');
+    topicTab.appendChild(topicDiv);
+    topicDiv.classList.add('tab');
+    topicDiv.textContent = topics;
 
-    // console.log(topicTab);
-    //    <div class="tab">topic here</div>
-    //});
+    console.log(topicTab);
+    console.log(topicDiv);
+    console.log(topics); //why isn't this showing up!!!
 
 };
 
-var topicsHold = [];
+
+
+
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
         console.log(response.data); //this is showing an ARRAY of topics
-        topicsHold = response.data;
-        //topicList(response.data); // ok don't call out just do it in here
-        topicsHold.forEach(function() {
-            var topicDiv = document.createElement('div');
-            topicTab.appendChild(topicDiv);
-            topicDiv.classList.add('tab');
-            topicDiv.textContent = _data[i];
-
-        });
-
+        topicsList(response.data);
     })
     .catch(error => {
         console.error(error)
-    })
+    });
 
 
 
