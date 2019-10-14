@@ -5,8 +5,8 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        console.log(response.data); //it is a whole bunch of objects- not articles
-        //topicsList(response.data);
+        console.log(response.data); //objects- not articles- just titles?
+        createCard(response.data);
     })
     .catch(error => {
         console.error(error)
@@ -49,7 +49,7 @@ function createCard(data) {
     imgSrc.src = data.authorPhoto;
 
     let nameSpan = document.createElement('span');
-    nameSpan.textContent = data.authorName;
+    nameSpan.textContent = `By ${data.authorName}`;
 
 
     cardContainer.appendChild(cardDiv);
