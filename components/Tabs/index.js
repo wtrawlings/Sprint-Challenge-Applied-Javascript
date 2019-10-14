@@ -20,9 +20,7 @@ function topicsList(topics) {
 
     console.log(topicTab);
     console.log(topicDiv);
-    console.log(topics); //why isn't this showing up!!!
-    //you are geting back an object not an array. 
-    //the dot.data isn't working either.
+    console.log(topics);
 };
 
 
@@ -30,17 +28,10 @@ function topicsList(topics) {
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
-        console.log(response.data); //this is showing an ARRAY of topics
-        topicsList(response.data);
+        console.log(response.data); //this is showing an Object with Topics array
+        let topicsHold = response.data;
+        topicsList(topicsHold.topics);
     })
     .catch(error => {
         console.error(error)
     });
-
-
-
-//console.log(topicsHold); //this shows as undefined
-
-//return topicList;//I need to return something!
-
-//console.log(topicTab)//no data in topicTab
