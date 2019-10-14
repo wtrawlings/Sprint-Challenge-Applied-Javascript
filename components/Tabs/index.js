@@ -10,40 +10,38 @@
 
 const topicTab = document.querySelector('.topics');
 console.log(topicTab);
-var topicsHold = [];
+
+function topicList(data) {
+    //const topicTab = document.querySelector('.topics');
+    data.forEach(function(_data) {
+            console.log(_data);
+        }
+        // var topicDiv = document.createElement('div');
+        // topicTab.appendChild(topicDiv);
+        // topicDiv.classList.add('tab');
+        // topicDiv.textContent = _data[i];
+
+        // console.log(topicTab);
+        //    <div class="tab">topic here</div>
+    });
+
+};
+
+
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
-        topicsHold = response.data;
-        console.log(topicsHold); //this is showing an ARRAY of topics
-        //console.log(topicList(response.data))
-        return topicsHold;
+        console.log(response.data); //this is showing an ARRAY of topics
+        topicList(response.data);
+
     })
     .catch(error => {
         console.error(error)
     })
 
-function topicList() {
-    //const topicTab = document.querySelector('.topics');
-
-    //console.log(topicsHold); //this is still blank for some reason
-    topicsHold.forEach(topicBunch());
-
-    function topicBunch() { //this is constructing the div
-        var topicDiv = document.createElement('div');
-        topicTab.appendChild(topicDiv);
-        topicDiv.classList.add('tab');
-        topicDiv.textContent = topics[i];
-
-        console.log(topicTab);
-        //    <div class="tab">topic here</div>
-    }
-
-}
 
 
-console.log(topicsHold); //this shows as undefined
+//console.log(topicsHold); //this shows as undefined
 
 //return topicList;//I need to return something!
 
 //console.log(topicTab)//no data in topicTab
-topicList();
