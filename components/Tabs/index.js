@@ -21,7 +21,8 @@ function topicsList(topics) {
     console.log(topicTab);
     console.log(topicDiv);
     console.log(topics); //why isn't this showing up!!!
-
+    //you are geting back an object not an array. 
+    //the dot.data isn't working either.
 };
 
 
