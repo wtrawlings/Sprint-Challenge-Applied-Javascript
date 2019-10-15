@@ -36,7 +36,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 4. Why would we convert a NodeList into an Array? I can't use map on a NodeList.
 
-5. What is a component? A function that returns an element in the interface
+5. What is a component? A function that returns an element in the interface.
 
 ### Git Set up
 
@@ -53,9 +53,9 @@ Your finished project must include all of the following requirements:
 
 * [x] Following the instructions in the `Header/index.js` file, create the Header component. 
 
-* [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
+* [x] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
-* [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
+* [x] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
 ## Stretch Problems
 
