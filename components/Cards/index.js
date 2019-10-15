@@ -5,8 +5,14 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        console.log(response.data); //objects- not articles- just titles?
-        createCard(response.data);
+        let dataFeed = response.data;
+        console.log(dataFeed.articles); //objects- not articles- just titles?
+        dataFeed.articles.bootstrap.forEach(createCard);
+        dataFeed.articles.javascript.forEach(createCard);
+        dataFeed.articles.jquery.forEach(createCard);
+        dataFeed.articles.node.forEach(createCard);
+        dataFeed.articles.technology.forEach(createCard);
+
     })
     .catch(error => {
         console.error(error)

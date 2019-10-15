@@ -11,16 +11,13 @@
 const topicTab = document.querySelector('.topics');
 console.log(topicTab);
 
+
 function topicsList(topics) {
-    //const topicTab = document.querySelector('.topics');
     var topicDiv = document.createElement('div');
     topicTab.appendChild(topicDiv);
     topicDiv.classList.add('tab');
     topicDiv.textContent = topics;
 
-    console.log(topicTab);
-    console.log(topicDiv);
-    console.log(topics);
 };
 
 
@@ -28,9 +25,10 @@ function topicsList(topics) {
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
-        console.log(response.data); //this is showing an Object with Topics array
+        //console.log(response.data); //this is showing an Object with Topics array
         let topicsHold = response.data;
-        topicsList(topicsHold.topics);
+        //topicsList(topicsHold.topics); //this kinda worked but not fully
+        topicsHold.topics.forEach(topicsList);
     })
     .catch(error => {
         console.error(error)
