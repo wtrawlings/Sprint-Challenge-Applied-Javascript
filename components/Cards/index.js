@@ -12,7 +12,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         dataFeed.articles.jquery.forEach(createCard);
         dataFeed.articles.node.forEach(createCard);
         dataFeed.articles.technology.forEach(createCard);
-
+        //could have looped through this with object.keys()- so look that up.
     })
     .catch(error => {
         console.error(error)
